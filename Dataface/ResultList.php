@@ -323,7 +323,8 @@ import('Dataface/QueryTool.php');
 							}
 						} else {
 							$class = 'unsorted-column';
-							$sort_query = $key.' asc';
+							//$sort_query = $key.' asc';
+							$sort_query = $key.' desc'; // kdg54 David Gleba
 							foreach ( $sort_columns as $scolkey=>$scolvalue){
 								$sort_query .= ', '.$scolkey.' '.$scolvalue;
 							}
