@@ -1,0 +1,59 @@
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+symlink modules into xataface directory..
+
+2017-06-04_Sun_10.12-AM
+
+array1=( Auth  bootstrap ckeditor DataGrid datepicker depselect g2responsive htmlreports mulitpleautocomplete radioButton tagger )
+#array1=(   radioButton tagger )
+for i in "${array1[@]}"
+do
+  fakedir1='/var/www/html/xataface/modules'     # note that this doesn't have ""egrappler"" in the command. 
+  mkdir -p $fakedir1
+  ln -s /var/www/html/xataface-modules/$i $fakedir1
+done
+#
+
+
+
+# https://www.cyberciti.biz/faq/bash-for-loop-array/
+#!/bin/bash
+# declare an array called array and define 3 vales
+array=( one two three )
+printf "%s\n" "${array1[@]}"
+for i in "${array[@]}"
+do
+	echo $i
+done
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2017-06-04[Jun-Sun]09-13AM
+
+simlink the modules into xataface/modules
+
+#ln -s real-life-file thing2point2it
+#ln -s real-life-folder thing2point2it-withoutlastfolder
+#ln -s /va/ww/1 /h   # creates /h/1
+#
+fakedir1='/var/www/html/xataface/modules'     # note that this doesn't have ""egrappler"" in the command. 
+mkdir -p $fakedir1
+ln -s /var/www/html/xataface-modules-link/egrappler $fakedir1
+
+=
+
+# to delete, rm the symlink..
+
+albe@v206x20161030220807:/var/www/html/shiftcsd1r/modules/egrappler$ ls -la
+lrwxrwxrwx 1 albe www-data   45 Feb  4 11:24 egrappler -> /var/www/html/xataface-modules-link/egrappler
+albe@v206x20161030220807:/var/www/html/shiftcsd1r/modules/egrappler$ rm egrappler
+albe@v206x20161030220807:/var/www/html/shiftcsd1r/modules/egrappler$ ls -la
+albe@v206x20161030220807:/var/www/html/shiftcsd1r/modules/egrappler$ 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
